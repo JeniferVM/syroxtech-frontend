@@ -7,7 +7,7 @@ export default async function CategoriasPage() {
 
   return (
     <>
-      <CategoriaHeader />
+      <CategoriaHeader categories={categories} />
       <div className="mx-30 border rounded-lg">
         <div className="m-5  border rounded-lg">
           <CategoriaTable categories={categories} />
