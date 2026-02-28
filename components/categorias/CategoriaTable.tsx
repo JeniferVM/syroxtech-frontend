@@ -14,6 +14,7 @@ import { deleteCategoria } from "@/Services/categorias";
 import { useState } from "react";
 import CategoriaModal from "./CategoriaModal";
 import { useRouter } from "next/navigation";
+import { getToken } from "@/Services/auth";
 
 interface CategoriaTableProps {
   categories: Category[];
@@ -27,9 +28,7 @@ const columns = [
   "Acciones",
 ];
 
-const token =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImFjMDAzZGUxLWM2ZGEtNDNlMS1iNjU3LWFlYzU4YmM5OWQwNyIsImVtYWlsIjoiYWRtaW5AdGVzdC5jb20iLCJpYXQiOjE3NzIyNTc5NTgsImV4cCI6MTc3MjI1OTc1OH0.-rEBQOy6ACpNbN2vi4pbUhhnxOcm_OWANXZI8gCPKR4";
-
+const token = getToken();
 export default function CategoriaTable({ categories }: CategoriaTableProps) {
   const router = useRouter();
 

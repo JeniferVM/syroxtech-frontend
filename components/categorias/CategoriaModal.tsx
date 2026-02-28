@@ -7,6 +7,7 @@ import { useState } from "react";
 import { createCategoria, updateCategoria } from "@/Services/categorias";
 import { Category } from "@/interfaces/category";
 import { useRouter } from "next/navigation";
+import { getToken } from "@/Services/auth";
 
 interface CategoriaModalProps extends ModalProps {
   categories: Category[];
@@ -19,8 +20,7 @@ export default function CategoriaModal({
   categories,
   categoria,
 }: CategoriaModalProps) {
-  const token =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImFjMDAzZGUxLWM2ZGEtNDNlMS1iNjU3LWFlYzU4YmM5OWQwNyIsImVtYWlsIjoiYWRtaW5AdGVzdC5jb20iLCJpYXQiOjE3NzIyNTc5NTgsImV4cCI6MTc3MjI1OTc1OH0.-rEBQOy6ACpNbN2vi4pbUhhnxOcm_OWANXZI8gCPKR4";
+  const token = getToken();
   const router = useRouter();
 
   async function handleSubmit(e: React.FormEvent) {
@@ -90,7 +90,7 @@ export default function CategoriaModal({
             >
               Cancelar
             </Button>
-            <Button type="submit">Guardar</Button>{" "}
+            <Button type="submit">Guardar</Button>
           </div>
         </form>
       </Modal>
