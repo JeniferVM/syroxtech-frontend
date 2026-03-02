@@ -11,6 +11,7 @@ export default function Navbar() {
     "/ventas": "Ventas",
     "/categorias": "Categorías",
     "/productos": "Productos",
+    "/productos/new": "Agregar Producto",
   };
 
   return (
