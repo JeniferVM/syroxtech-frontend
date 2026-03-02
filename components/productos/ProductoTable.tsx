@@ -22,6 +22,13 @@ interface ProductTableProps {
   categories: Category[];
 }
 
+const statusStyles = {
+  Preparing: "bg-orange-100 text-orange-700 border-orange-700",
+  Shipped: "bg-yellow-100 text-yellow-700 border-yellow-700",
+  Cancelled: "bg-red-100 text-red-700 border-red-700",
+  Completed: "bg-green-100 text-green-700 border-green-700",
+};
+
 const columns = [
   "Foto",
   "Nombre",
